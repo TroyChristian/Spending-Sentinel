@@ -21,6 +21,14 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //add to  a list of selected cells here to create more than 1 cat if cell is > 1
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderWidth = 2.0
+        cell?.layer.borderColor = UIColor.gray.cgColor
+        
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
