@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Cr-wM-8Kz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="MB4-Mm-hUW">
+            <objects>
+                <viewController id="5Cr-wM-8Kz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AcB-Ij-3jC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Purchase" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bE-F4-H2i">
+                                <rect key="frame" x="149" y="118" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rHa-5w-lJ0">
+                                <rect key="frame" x="149" y="162" width="132" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CxS-dE-LNE">
+                                <rect key="frame" x="87" y="233" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T9m-N4-wLk">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eIM-Uc-r04">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vUg-yE-KfD">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rHa-5w-lJ0" firstAttribute="top" secondItem="1bE-F4-H2i" secondAttribute="bottom" constant="23" id="4yJ-a8-RgZ"/>
+                            <constraint firstItem="IC2-2q-Z8j" firstAttribute="bottom" secondItem="CxS-dE-LNE" secondAttribute="bottom" constant="501" id="Ca5-Xo-JQA"/>
+                            <constraint firstItem="CxS-dE-LNE" firstAttribute="top" secondItem="rHa-5w-lJ0" secondAttribute="bottom" constant="37" id="DMB-e3-uhw"/>
+                            <constraint firstItem="CxS-dE-LNE" firstAttribute="leading" secondItem="IC2-2q-Z8j" secondAttribute="leading" constant="87" id="JRa-FG-bfj"/>
+                            <constraint firstItem="IC2-2q-Z8j" firstAttribute="trailing" secondItem="1bE-F4-H2i" secondAttribute="trailing" constant="133" id="KiV-4E-P8h"/>
+                            <constraint firstItem="rHa-5w-lJ0" firstAttribute="leading" secondItem="1bE-F4-H2i" secondAttribute="leading" id="UTZ-Fk-0Ok"/>
+                            <constraint firstItem="rHa-5w-lJ0" firstAttribute="trailing" secondItem="1bE-F4-H2i" secondAttribute="trailing" id="XJg-Ko-iZR"/>
+                            <constraint firstItem="1bE-F4-H2i" firstAttribute="top" secondItem="IC2-2q-Z8j" secondAttribute="top" constant="74" id="aUg-64-9Nj"/>
+                            <constraint firstItem="IC2-2q-Z8j" firstAttribute="trailing" secondItem="CxS-dE-LNE" secondAttribute="trailing" constant="87" id="isu-ds-S3o"/>
+                            <constraint firstItem="1bE-F4-H2i" firstAttribute="leading" secondItem="IC2-2q-Z8j" secondAttribute="leading" constant="149" id="nUY-7E-wPK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IC2-2q-Z8j"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YE0-5E-bZU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1.4492753623188408" y="205.58035714285714"/>
+        </scene>
+    </scenes>
+</document>
