@@ -45,11 +45,15 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.layer.borderWidth = 2.0
         cell?.layer.borderColor = UIColor.gray.cgColor
+        cell?.isSelected = true
+       
         
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.layer.borderColor = UIColor.white.cgColor
+        cell?.isSelected = false
+         
 
 
     }

@@ -12,7 +12,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     // add is selected Bool edit in viewcontroller on select
     @IBOutlet weak var categoryLabel: UILabel!
 
-var label = "PlaceHolder"
+
 
 
 }
