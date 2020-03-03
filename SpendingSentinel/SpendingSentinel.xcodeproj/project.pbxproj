@@ -14,6 +14,8 @@
 		FBBF04C7240EBA09000D7D03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBBF04C5240EBA09000D7D03 /* LaunchScreen.storyboard */; };
 		FBBF04CF240EC67B000D7D03 /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04CE240EC67B000D7D03 /* CategoryCollectionViewController.swift */; };
 		FBBF04D2240EC7BF000D7D03 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04D1240EC7BF000D7D03 /* CategoryCollectionViewCell.swift */; };
+		FBBF04D5240ED37A000D7D03 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04D4240ED37A000D7D03 /* CoreDataStack.swift */; };
+		FBBF04D8240ED412000D7D03 /* SpendingSentinel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04D6240ED412000D7D03 /* SpendingSentinel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		FBBF04C8240EBA09000D7D03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBBF04CE240EC67B000D7D03 /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		FBBF04D1240EC7BF000D7D03 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		FBBF04D4240ED37A000D7D03 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		FBBF04D7240ED412000D7D03 /* SpendingSentinel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpendingSentinel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 				FBBF04C3240EBA09000D7D03 /* Assets.xcassets */,
 				FBBF04C5240EBA09000D7D03 /* LaunchScreen.storyboard */,
 				FBBF04C8240EBA09000D7D03 /* Info.plist */,
+				FBBF04D3240ED365000D7D03 /* CoreData */,
 				FBBF04D0240EC789000D7D03 /* CollectionView */,
 			);
 			path = SpendingSentinel;
@@ -76,6 +81,15 @@
 				FBBF04D1240EC7BF000D7D03 /* CategoryCollectionViewCell.swift */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		FBBF04D3240ED365000D7D03 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FBBF04D4240ED37A000D7D03 /* CoreDataStack.swift */,
+				FBBF04D6240ED412000D7D03 /* SpendingSentinel.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,10 +163,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBBF04D5240ED37A000D7D03 /* CoreDataStack.swift in Sources */,
 				FBBF04D2240EC7BF000D7D03 /* CategoryCollectionViewCell.swift in Sources */,
 				FBBF04BB240EBA07000D7D03 /* AppDelegate.swift in Sources */,
 				FBBF04BD240EBA07000D7D03 /* SceneDelegate.swift in Sources */,
 				FBBF04CF240EC67B000D7D03 /* CategoryCollectionViewController.swift in Sources */,
+				FBBF04D8240ED412000D7D03 /* SpendingSentinel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +366,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FBBF04D6240ED412000D7D03 /* SpendingSentinel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FBBF04D7240ED412000D7D03 /* SpendingSentinel.xcdatamodel */,
+			);
+			currentVersion = FBBF04D7240ED412000D7D03 /* SpendingSentinel.xcdatamodel */;
+			path = SpendingSentinel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FBBF04AF240EBA07000D7D03 /* Project object */;
 }
