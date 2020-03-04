@@ -10,7 +10,7 @@ import UIKit
 
 class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     private var categories = ["Gas","Food"]
-    // passing in correctly formatted dates when a new entry is created
+   
 
    
     
@@ -64,13 +64,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       // testEntry.createEntry(amountSpent: 11.11, category: "Gas", date: Date(), note: nil)
-       let date = Date()
-       let formatter = DateFormatter()
-        formatter.dateFormat = "MM-dd-yyyy"
-        let formattedDate = formatter.string(from: date)
-        print(formattedDate)
-        // Do any additional setup after loading the view.
+      
+    
+
     }
     
 

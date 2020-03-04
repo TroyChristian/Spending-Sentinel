@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Cr-wM-8Kz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EEA-b9-ddI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Category View Controller-->
+        <!--Enter Purchase-->
         <scene sceneID="MB4-Mm-hUW">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YE0-5E-bZU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -29,7 +29,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CxS-dE-LNE" customClass="CategoryCollectionView" customModule="SpendingSentinel" customModuleProvider="target">
-                                <rect key="frame" x="87" y="233" width="240" height="128"/>
+                                <rect key="frame" x="87" y="233" width="240" height="79"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T9m-N4-wLk">
                                     <size key="itemSize" width="92" height="70"/>
@@ -81,9 +81,61 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IC2-2q-Z8j"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Enter Purchase" image="dollarsign.circle" catalog="system" id="ztz-kM-tUu"/>
                 </viewController>
+            </objects>
+            <point key="canvasLocation" x="908.69565217391312" y="205.58035714285714"/>
+        </scene>
+        <!--Monthly Overview-->
+        <scene sceneID="uO9-vX-8bv">
+            <objects>
+                <tableViewController id="dBg-ia-u8b" customClass="CurrentMonthTableViewController" customModule="SpendingSentinel" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3iW-4m-azR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrentMonthCell" id="rCJ-Fy-26x" customClass="CurrentMonthTableViewCell" customModule="SpendingSentinel" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rCJ-Fy-26x" id="rfy-n7-0MM">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dBg-ia-u8b" id="4kk-4p-TEG"/>
+                            <outlet property="delegate" destination="dBg-ia-u8b" id="iVz-85-x6k"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Monthly Overview" selectedImage="calendar.circle" catalog="system" id="jbZ-8R-qiX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="spW-cY-5iy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="899" y="843"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="cg3-3M-lq0">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="EEA-b9-ddI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q2i-N1-ZLB">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="5Cr-wM-8Kz" kind="relationship" relationship="viewControllers" id="zfJ-gh-HkM"/>
+                        <segue destination="dBg-ia-u8b" kind="relationship" relationship="viewControllers" id="dwh-K8-dir"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jab-SF-ZaX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1.4492753623188408" y="205.58035714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar.circle" catalog="system" width="64" height="60"/>
+        <image name="dollarsign.circle" catalog="system" width="64" height="60"/>
+    </resources>
 </document>
