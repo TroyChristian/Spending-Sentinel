@@ -11,7 +11,8 @@ import UIKit
 class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     private var categories = ["Gas","Food"]
     
-    
+    //temp entry controller for testing
+    var testEntry = EntryController()
 
     
     
@@ -60,6 +61,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        testEntry.createEntry(amountSpent: 2.22, category: "Food", date: Date(), note: "note")
 
         // Do any additional setup after loading the view.
     }
