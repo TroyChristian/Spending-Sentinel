@@ -15,7 +15,7 @@
 		FBBF04D2240EC7BF000D7D03 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04D1240EC7BF000D7D03 /* CategoryCollectionViewCell.swift */; };
 		FBBF04D5240ED37A000D7D03 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04D4240ED37A000D7D03 /* CoreDataStack.swift */; };
 		FBBF04D8240ED412000D7D03 /* SpendingSentinel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04D6240ED412000D7D03 /* SpendingSentinel.xcdatamodeld */; };
-		FBBF04DB240EEAE5000D7D03 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04DA240EEAE5000D7D03 /* CategoryController.swift */; };
+		FBBF04DB240EEAE5000D7D03 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04DA240EEAE5000D7D03 /* EntryController.swift */; };
 		FBBF04DD240F0D2F000D7D03 /* CategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04DC240F0D2F000D7D03 /* CategoryCollectionView.swift */; };
 		FBBF04DF240F1011000D7D03 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04DE240F1011000D7D03 /* CategoryViewController.swift */; };
 /* End PBXBuildFile section */
@@ -31,9 +31,10 @@
 		FBBF04D1240EC7BF000D7D03 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		FBBF04D4240ED37A000D7D03 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FBBF04D7240ED412000D7D03 /* SpendingSentinel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpendingSentinel.xcdatamodel; sourceTree = "<group>"; };
-		FBBF04DA240EEAE5000D7D03 /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
+		FBBF04DA240EEAE5000D7D03 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		FBBF04DC240F0D2F000D7D03 /* CategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionView.swift; sourceTree = "<group>"; };
 		FBBF04DE240F1011000D7D03 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		FBBF04E0240F783F000D7D03 /* SpendingSentinel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SpendingSentinel 2.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +102,7 @@
 		FBBF04D9240EEAC1000D7D03 /* CategoryController */ = {
 			isa = PBXGroup;
 			children = (
-				FBBF04DA240EEAE5000D7D03 /* CategoryController.swift */,
+				FBBF04DA240EEAE5000D7D03 /* EntryController.swift */,
 			);
 			path = CategoryController;
 			sourceTree = "<group>";
@@ -182,7 +183,7 @@
 				FBBF04D2240EC7BF000D7D03 /* CategoryCollectionViewCell.swift in Sources */,
 				FBBF04BB240EBA07000D7D03 /* AppDelegate.swift in Sources */,
 				FBBF04DF240F1011000D7D03 /* CategoryViewController.swift in Sources */,
-				FBBF04DB240EEAE5000D7D03 /* CategoryController.swift in Sources */,
+				FBBF04DB240EEAE5000D7D03 /* EntryController.swift in Sources */,
 				FBBF04BD240EBA07000D7D03 /* SceneDelegate.swift in Sources */,
 				FBBF04D8240ED412000D7D03 /* SpendingSentinel.xcdatamodeld in Sources */,
 			);
@@ -387,9 +388,10 @@
 		FBBF04D6240ED412000D7D03 /* SpendingSentinel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				FBBF04E0240F783F000D7D03 /* SpendingSentinel 2.xcdatamodel */,
 				FBBF04D7240ED412000D7D03 /* SpendingSentinel.xcdatamodel */,
 			);
-			currentVersion = FBBF04D7240ED412000D7D03 /* SpendingSentinel.xcdatamodel */;
+			currentVersion = FBBF04E0240F783F000D7D03 /* SpendingSentinel 2.xcdatamodel */;
 			path = SpendingSentinel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
