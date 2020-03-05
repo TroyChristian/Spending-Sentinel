@@ -64,7 +64,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        EntryController.shared.createEntry(amountSpent: 22.95, category: "Gas", date: Date(), note: nil)
     
 
     }
