@@ -12,16 +12,17 @@ import CoreData
 class currentMonthViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,  NSFetchedResultsControllerDelegate {
   
     var frc:NSFetchedResultsController<Entry>!
-    
+    var tableView = UITableView() 
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
 
-        loadData()
+       loadData()
+        
     }
     
-    func loadData() {
+    func loadData()  {
         // set up fr
         let fetchRequest:NSFetchRequest<Entry> = Entry.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "category", ascending: true)]
@@ -29,6 +30,9 @@ class currentMonthViewController: UIViewController, UITableViewDataSource, UITab
         frc = NSFetchedResultsController(fetchRequest:fetchRequest, managedObjectContext:moc, sectionNameKeyPath: nil, cacheName:nil)
         frc.delegate = self  // conform to delegate protocol
         try! frc.performFetch()
+        print("loadData() executed")
+      
+      
         
     }
     
@@ -39,21 +43,19 @@ class currentMonthViewController: UIViewController, UITableViewDataSource, UITab
     
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sections = self.frc?.sections else {
-            fatalError("No sections in fetchedResultsController")
-        }
-        let sectionInfo = sections[section]
-        return sectionInfo.numberOfObjects
+        guard let entries = frc.fetchedObjects else {return 0}
+        return entries.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-          guard   let cell = tableView.dequeueReusableCell(withIdentifier: "EntryCell", for: indexPath) as? CurrentMonthTableViewCell else {return UITableViewCell()}
-        guard let entry = self.frc?.object(at: indexPath) else {
-            fatalError("Attempt to configure cell without a managed object")
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EntryCell", for: indexPath) as? CurrentMonthTableViewCell else { fatalError("Unexpected Index Path")}
+         
+        
         // Configure the cell with data from the managed object.
+        let entry = frc.object(at: indexPath)
         cell.categoryLabel.text = entry.category
         cell.amountLabel.text = "\(entry.amountSpent)"
-              return cell
+       
+        return cell }
         
             func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
                 tableView.beginUpdates()
@@ -95,7 +97,7 @@ class currentMonthViewController: UIViewController, UITableViewDataSource, UITab
                 }
             }
         }
-    }
+    
 
 
 
