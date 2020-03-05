@@ -10,6 +10,11 @@ import UIKit
 
 class CurrentMonthTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var categoryLabel: UILabel!
+    
+    
+    @IBOutlet weak var amountLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -10,6 +10,10 @@ import Foundation
 import CoreData
 
 class EntryController {
+    
+    static var shared = EntryController()
+    var entries = [Entry]()
+    
     @discardableResult func createEntry(amountSpent:Double, category:String, date:Date, note:String?) -> Entry {
         let context = CoreDataStack.shared.container.newBackgroundContext()
         let entry = Entry(amountSpent:amountSpent, category:category, date:date, id:UUID())
@@ -23,12 +27,19 @@ class EntryController {
         
     }
     
+    func getAllCategories(completion: @escaping() -> Void = {}) {
+        let fetchRequest:NSFetchRequest<Entry> = Entry.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "category", ascending: true)]
+        let moc = CoreDataStack.shared.mainContext
+        let frc = NSFetchedResultsController(fetchRequest:fetchRequest, managedObjectContext:moc, sectionNameKeyPath: "priority", cacheName:nil)  
+        try! frc.performFetch()
+        
+        
+        
+        
+        
+    }
+    
 
 }
-/*
- do {
-     try igniteRockets(fuel: 5000, astronauts: 1)
- } catch {
-     print(error)
- }
- */
+
