@@ -67,6 +67,17 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7v-vi-F2o">
                                 <rect key="frame" x="297" y="51" width="95" height="30"/>
                                 <state key="normal" title="Add Category"/>
+                                <connections>
+                                    <action selector="addCategory:" destination="5Cr-wM-8Kz" eventType="touchUpInside" id="rR5-dM-UwL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHB-If-VKc">
+                                <rect key="frame" x="155" y="706" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Enter Purchase"/>
+                                <connections>
+                                    <action selector="enterPurchaseButton:" destination="5Cr-wM-8Kz" eventType="touchUpInside" id="9me-OK-8Kc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
