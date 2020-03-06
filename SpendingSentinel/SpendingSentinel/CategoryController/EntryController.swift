@@ -27,6 +27,18 @@ class EntryController {
         
     }
     
+    func delete(entry: Entry) {
+        
+        CoreDataStack.shared.mainContext.delete(entry)
+         let context = CoreDataStack.shared.container.newBackgroundContext()
+       do {
+                 try CoreDataStack.shared.save(context:context)
+                 print("CoreData entry saved!")
+             } catch {
+                 print("CoreDataObject was not saved, EntryController line 19: createEntry, error: \(error)")
+             }
+    }
+    
     func getAllCategories(completion: @escaping() -> Void = {}) {
         let fetchRequest:NSFetchRequest<Entry> = Entry.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "category", ascending: true)]

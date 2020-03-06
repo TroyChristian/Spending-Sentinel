@@ -11,13 +11,27 @@ import UIKit
 class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     private var categories = ["Gas","Food"]
    
-
+    @IBOutlet weak var purchaseTextField: UITextField!
+    
    
     
     //temp entry controller for testing
-    var testEntry = EntryController()
+    var entryController = EntryController.shared
 
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        entryController.createEntry(amountSpent: 100.00, category: "Food", date: Date(), note: nil)
+      
+    
+
+    }
+    func enterPurchase() {
+        guard let purchase = (purchaseTextField.text) else { return }
+        //guard let purchase = Double(purchase)
+        
+        
+    }
     
     
     
@@ -62,13 +76,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
 
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        EntryController.shared.createEntry(amountSpent: 22.95, category: "Gas", date: Date(), note: nil)
-    
 
-    }
-    
 
     /*
     // MARK: - Navigation

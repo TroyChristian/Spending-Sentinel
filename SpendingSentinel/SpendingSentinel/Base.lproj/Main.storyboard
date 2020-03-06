@@ -11,7 +11,6 @@
         <!--Enter Purchase-->
         <scene sceneID="MB4-Mm-hUW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YE0-5E-bZU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="5Cr-wM-8Kz" customClass="CategoryViewController" customModule="SpendingSentinel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AcB-Ij-3jC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -65,16 +64,23 @@
                                     <outlet property="delegate" destination="5Cr-wM-8Kz" id="Ln6-xK-XZZ"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7v-vi-F2o">
+                                <rect key="frame" x="297" y="51" width="95" height="30"/>
+                                <state key="normal" title="Add Category"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="rHa-5w-lJ0" firstAttribute="top" secondItem="1bE-F4-H2i" secondAttribute="bottom" constant="23" id="4yJ-a8-RgZ"/>
                             <constraint firstItem="IC2-2q-Z8j" firstAttribute="bottom" secondItem="CxS-dE-LNE" secondAttribute="bottom" constant="501" id="Ca5-Xo-JQA"/>
                             <constraint firstItem="CxS-dE-LNE" firstAttribute="top" secondItem="rHa-5w-lJ0" secondAttribute="bottom" constant="37" id="DMB-e3-uhw"/>
+                            <constraint firstItem="IC2-2q-Z8j" firstAttribute="trailing" secondItem="U7v-vi-F2o" secondAttribute="trailing" constant="22" id="GJ0-j4-P5E"/>
                             <constraint firstItem="CxS-dE-LNE" firstAttribute="leading" secondItem="IC2-2q-Z8j" secondAttribute="leading" constant="87" id="JRa-FG-bfj"/>
                             <constraint firstItem="IC2-2q-Z8j" firstAttribute="trailing" secondItem="1bE-F4-H2i" secondAttribute="trailing" constant="133" id="KiV-4E-P8h"/>
+                            <constraint firstItem="U7v-vi-F2o" firstAttribute="leading" secondItem="IC2-2q-Z8j" secondAttribute="leading" constant="297" id="MNi-Xr-0sv"/>
                             <constraint firstItem="rHa-5w-lJ0" firstAttribute="leading" secondItem="1bE-F4-H2i" secondAttribute="leading" id="UTZ-Fk-0Ok"/>
                             <constraint firstItem="rHa-5w-lJ0" firstAttribute="trailing" secondItem="1bE-F4-H2i" secondAttribute="trailing" id="XJg-Ko-iZR"/>
+                            <constraint firstItem="U7v-vi-F2o" firstAttribute="top" secondItem="IC2-2q-Z8j" secondAttribute="top" constant="7" id="XY4-SH-s9L"/>
                             <constraint firstItem="1bE-F4-H2i" firstAttribute="top" secondItem="IC2-2q-Z8j" secondAttribute="top" constant="74" id="aUg-64-9Nj"/>
                             <constraint firstItem="IC2-2q-Z8j" firstAttribute="trailing" secondItem="CxS-dE-LNE" secondAttribute="trailing" constant="87" id="isu-ds-S3o"/>
                             <constraint firstItem="1bE-F4-H2i" firstAttribute="leading" secondItem="IC2-2q-Z8j" secondAttribute="leading" constant="149" id="nUY-7E-wPK"/>
@@ -82,67 +88,62 @@
                         <viewLayoutGuide key="safeArea" id="IC2-2q-Z8j"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Enter Purchase" image="dollarsign.circle" catalog="system" id="ztz-kM-tUu"/>
+                    <connections>
+                        <outlet property="purchaseTextField" destination="rHa-5w-lJ0" id="3Ke-eG-X62"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YE0-5E-bZU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="908.69565217391312" y="205.58035714285714"/>
         </scene>
-        <!--Month Overview-->
-        <scene sceneID="M5L-qI-Jjo">
+        <!--Monthly OverView-->
+        <scene sceneID="gKr-8L-sFi">
             <objects>
-                <viewController id="vvT-ko-UlQ" customClass="currentMonthViewController" customModule="SpendingSentinel" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BCS-BB-DL7">
+                <tableViewController id="cX0-yo-BWF" customClass="CurrentMonthTableViewController" customModule="SpendingSentinel" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wzZ-Fq-dNW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KJV-Ba-PIz">
-                                <rect key="frame" x="20" y="203" width="374" height="471"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EntryCell" id="EvB-8b-CiT" customClass="CurrentMonthTableViewCell" customModule="SpendingSentinel" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EvB-8b-CiT" id="lOG-TN-mEz">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuS-ZN-4CQ">
-                                                    <rect key="frame" x="20" y="11" width="71" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z68-hQ-fZ3">
-                                                    <rect key="frame" x="297" y="11" width="60" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="amountLabel" destination="z68-hQ-fZ3" id="03p-0T-JrI"/>
-                                            <outlet property="categoryLabel" destination="KuS-ZN-4CQ" id="4Gf-hg-Byr"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="KJV-Ba-PIz" firstAttribute="top" secondItem="hPj-Lv-VQI" secondAttribute="top" constant="159" id="LSh-15-Il4"/>
-                            <constraint firstItem="hPj-Lv-VQI" firstAttribute="trailing" secondItem="KJV-Ba-PIz" secondAttribute="trailing" constant="20" id="TdV-zo-vmT"/>
-                            <constraint firstItem="KJV-Ba-PIz" firstAttribute="leading" secondItem="hPj-Lv-VQI" secondAttribute="leading" constant="20" id="Xww-9c-TiW"/>
-                            <constraint firstItem="hPj-Lv-VQI" firstAttribute="bottom" secondItem="KJV-Ba-PIz" secondAttribute="bottom" constant="139" id="hK4-Fl-Jpx"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="hPj-Lv-VQI"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Month Overview" selectedImage="calendar.circle" catalog="system" id="Hj2-yf-N5F"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="91z-xe-vXt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" id="DL9-xJ-iOK" customClass="CurrentMonthTableViewCell" customModule="SpendingSentinel" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DL9-xJ-iOK" id="N98-Kb-M0d">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hi6-yH-o5S">
+                                            <rect key="frame" x="36" y="11" width="71" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gL-yT-5rO">
+                                            <rect key="frame" x="311" y="11" width="60" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="amountLabel" destination="4gL-yT-5rO" id="KYI-gx-nUL"/>
+                                    <outlet property="categoryLabel" destination="Hi6-yH-o5S" id="SGD-bG-Bo0"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cX0-yo-BWF" id="v1o-6r-cTF"/>
+                            <outlet property="delegate" destination="cX0-yo-BWF" id="hMO-Uv-bLU"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Monthly OverView" selectedImage="calendar.circle" catalog="system" id="mgh-Oe-C4Z"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xqr-Da-eog" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940.57971014492762" y="873.88392857142856"/>
+            <point key="canvasLocation" x="1583" y="209"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cg3-3M-lq0">
@@ -150,12 +151,13 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="EEA-b9-ddI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q2i-N1-ZLB">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="5Cr-wM-8Kz" kind="relationship" relationship="viewControllers" id="zfJ-gh-HkM"/>
-                        <segue destination="vvT-ko-UlQ" kind="relationship" relationship="viewControllers" id="xXj-m4-5WX"/>
+                        <segue destination="cX0-yo-BWF" kind="relationship" relationship="viewControllers" id="7qd-TO-A9n"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jab-SF-ZaX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

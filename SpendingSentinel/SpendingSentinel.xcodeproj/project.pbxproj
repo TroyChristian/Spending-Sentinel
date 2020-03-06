@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB528FDD2411E88100A8AC0C /* CurrentMonthTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB528FDC2411E88100A8AC0C /* CurrentMonthTableViewController.swift */; };
 		FBBF04BB240EBA07000D7D03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04BA240EBA07000D7D03 /* AppDelegate.swift */; };
 		FBBF04BD240EBA07000D7D03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04BC240EBA07000D7D03 /* SceneDelegate.swift */; };
 		FBBF04C2240EBA07000D7D03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBBF04C0240EBA07000D7D03 /* Main.storyboard */; };
@@ -20,10 +21,10 @@
 		FBBF04DF240F1011000D7D03 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04DE240F1011000D7D03 /* CategoryViewController.swift */; };
 		FBBF04E5240F7C13000D7D03 /* Entry+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04E4240F7C13000D7D03 /* Entry+Convenience.swift */; };
 		FBBF04EA24105B3F000D7D03 /* CurrentMonthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04E924105B3F000D7D03 /* CurrentMonthTableViewCell.swift */; };
-		FBBF04EC2410AD04000D7D03 /* currentMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04EB2410AD04000D7D03 /* currentMonthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB528FDC2411E88100A8AC0C /* CurrentMonthTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMonthTableViewController.swift; sourceTree = "<group>"; };
 		FBBF04B7240EBA07000D7D03 /* SpendingSentinel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpendingSentinel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBF04BA240EBA07000D7D03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBBF04BC240EBA07000D7D03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		FBBF04E3240F7B41000D7D03 /* SpendingSentinel 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SpendingSentinel 5.xcdatamodel"; sourceTree = "<group>"; };
 		FBBF04E4240F7C13000D7D03 /* Entry+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+Convenience.swift"; sourceTree = "<group>"; };
 		FBBF04E924105B3F000D7D03 /* CurrentMonthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMonthTableViewCell.swift; sourceTree = "<group>"; };
-		FBBF04EB2410AD04000D7D03 /* currentMonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentMonthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				FBBF04E924105B3F000D7D03 /* CurrentMonthTableViewCell.swift */,
-				FBBF04EB2410AD04000D7D03 /* currentMonthViewController.swift */,
+				FB528FDC2411E88100A8AC0C /* CurrentMonthTableViewController.swift */,
 			);
 			path = currentMonthTableViewController;
 			sourceTree = "<group>";
@@ -201,12 +201,12 @@
 				FBBF04D5240ED37A000D7D03 /* CoreDataStack.swift in Sources */,
 				FBBF04E5240F7C13000D7D03 /* Entry+Convenience.swift in Sources */,
 				FBBF04DD240F0D2F000D7D03 /* CategoryCollectionView.swift in Sources */,
+				FB528FDD2411E88100A8AC0C /* CurrentMonthTableViewController.swift in Sources */,
 				FBBF04D2240EC7BF000D7D03 /* CategoryCollectionViewCell.swift in Sources */,
 				FBBF04BB240EBA07000D7D03 /* AppDelegate.swift in Sources */,
 				FBBF04DF240F1011000D7D03 /* CategoryViewController.swift in Sources */,
 				FBBF04EA24105B3F000D7D03 /* CurrentMonthTableViewCell.swift in Sources */,
 				FBBF04DB240EEAE5000D7D03 /* EntryController.swift in Sources */,
-				FBBF04EC2410AD04000D7D03 /* currentMonthViewController.swift in Sources */,
 				FBBF04BD240EBA07000D7D03 /* SceneDelegate.swift in Sources */,
 				FBBF04D8240ED412000D7D03 /* SpendingSentinel.xcdatamodeld in Sources */,
 			);
