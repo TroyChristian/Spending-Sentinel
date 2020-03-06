@@ -8,18 +8,24 @@
 
 import Foundation
 import CoreData
+// Set Userdefault to check if this is the first time the user is running the app.
+// Implement logic to handle if load file does not exist.
+
 
 class EntryController {
     init() {
         loadFromPersistentStore()
+        
     }
+    //categories
     
     static var shared = EntryController()
     var entries = [Entry]()
-    var categories = [String]()
+    
+    var categories = ["Gas","Food"]
     
     @discardableResult func createEntry(amountSpent:Double, category:String, date:Date, note:String?) -> Entry {
-        let context = CoreDataStack.shared.container.newBackgroundContext()
+        let context = CoreDataStack.shared.mainContext
         let entry = Entry(amountSpent:amountSpent, category:category, date:date, id:UUID())
         do {
             try CoreDataStack.shared.save(context:context)
@@ -34,13 +40,13 @@ class EntryController {
     func delete(entry: Entry) {
         
         CoreDataStack.shared.mainContext.delete(entry)
-         let context = CoreDataStack.shared.container.newBackgroundContext()
-       do {
-                 try CoreDataStack.shared.save(context:context)
-                 print("CoreData entry saved!")
-             } catch {
-                 print("CoreDataObject was not saved, EntryController line 19: createEntry, error: \(error)")
-             }
+        let context = CoreDataStack.shared.container.newBackgroundContext()
+        do {
+            try CoreDataStack.shared.save(context:context)
+            print("CoreData entry saved!")
+        } catch {
+            print("CoreDataObject was not saved, EntryController line 19: createEntry, error: \(error)")
+        }
     }
     
     func getAllCategories(completion: @escaping() -> Void = {}) {
@@ -55,45 +61,79 @@ class EntryController {
         
         
     }
+    private var initialCategoryList:URL? {
+        
+        Bundle.main.url(forResource: "categoriesList", withExtension: "plist")
+        
+    }
     
     private var categoryListURL: URL? {
-          let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-          
-          let fileName = "categoriesList.plist"
-          
-          return documentDirectory?.appendingPathComponent(fileName)
-      }
-      
-      private func saveToPersistentStore() {
-          
-          let plistEncoder = PropertyListEncoder()
-          
-          do {
-              let categoryData = try plistEncoder.encode(categories)
-              
-              guard let fileURL = categoryListURL else { return }
-              
-              try categoryData.write(to: fileURL)
-          } catch {
-              NSLog("Error encoding memories to property list: \(error)")
-          }
-      }
-      
-      private func loadFromPersistentStore() {
-          
-          do {
-              guard let fileURL = categoryListURL else { return }
-              
-              let categoryData = try Data(contentsOf: fileURL)
-              
-              let plistDecoder = PropertyListDecoder()
-              
-              self.categories = try plistDecoder.decode([String].self, from: categoryData)
-          } catch {
-              NSLog("Error decoding memories from property list: \(error)")
-          }
-      }
+        let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        
+        
+        
+        
+        let fileName = "categoriesList.plist"
+        
+        return documentDirectory?.appendingPathComponent(fileName)
+    }
+    
+     func saveToPersistentStore() {
+        
+        let plistEncoder = PropertyListEncoder()
+        
+        do {
+            let categoryData = try plistEncoder.encode(categories)
+            
+            guard let fileURL = categoryListURL else { return }
+            print("For saving URL: \(fileURL)")
+            
+            
+            try categoryData.write(to: fileURL)
+        } catch {
+            NSLog("Error encoding memories to property list: \(error)")
+        }
+    }
+    
+    private func loadFromPersistentStore() {
+        
+        
+        guard let fileURL = categoryListURL else { return }
+        print("For loading URL: \(fileURL)")
+        if FileManager.default.fileExists(atPath: fileURL.path) {
+            do {
+                let categoryData = try Data(contentsOf: fileURL)
+                
+                let plistDecoder = PropertyListDecoder()
+                
+                self.categories = try plistDecoder.decode([String].self, from: categoryData)
+                print("loaded stored categories:\(categories)")
+            } catch {
+                NSLog("Error decoding memories from property list: \(error)")
+            }
+            
+            
+        } else {
+            // this is the first time the user is using the app,  loading default categories
+            guard let initialCategoryList =  initialCategoryList else {return}
+                do {
+                    let categoryData = try Data(contentsOf: initialCategoryList)
+                    
+                    let plistDecoder = PropertyListDecoder()
+                    
+                    self.categories = try plistDecoder.decode([String].self, from: categoryData)
+                    print("initial categories:\(categories)")
+                } catch {
+                    NSLog("Error decoding memories from property list: \(error)")
+                }
+                
+                
+            }
+        }
+        
+        
+    }
+    
     
 
-}
 

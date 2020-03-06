@@ -10,11 +10,7 @@ import UIKit
 
 class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    private var categories = ["Gas","Food"] {
-        didSet{
-            collectionView.reloadData()
-        }
-    }
+  
     
     var chosenCategories = [String]()
     var knownAmountofFirstPurchase:Double?
@@ -60,7 +56,10 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func addCategory(){
         guard let newCategory = newCategoryTextField.text else {return}
-        categories.append(newCategory)
+        EntryController.shared.categories.append(newCategory)
+        // save categories
+       EntryController.shared.saveToPersistentStore()
+        collectionView.reloadData()
         
     }
     
@@ -147,14 +146,14 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        return EntryController.shared.categories.count
     }
     
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCollectionViewCell
-        cell.categoryLabel.text = categories[indexPath.row]
+        cell.categoryLabel.text = EntryController.shared.categories[indexPath.row]
         return cell 
         
     }

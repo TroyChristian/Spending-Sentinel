@@ -116,13 +116,14 @@ class CurrentMonthTableViewController: UITableViewController, NSFetchedResultsCo
      lazy var fetchedResultsController: NSFetchedResultsController<Entry> = {
          let fetchRequest: NSFetchRequest<Entry> = Entry.fetchRequest()
          fetchRequest.sortDescriptors = [NSSortDescriptor(key: "category", ascending: false)]
-         
+         //TODO: Edit sort to be more orderly
          let moc = CoreDataStack.shared.mainContext
          let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
          
          frc.delegate = self
          
          try! frc.performFetch()
+     
          
          return frc
      }()
