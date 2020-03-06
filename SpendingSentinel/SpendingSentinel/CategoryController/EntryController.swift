@@ -13,6 +13,7 @@ class EntryController {
     
     static var shared = EntryController()
     var entries = [Entry]()
+    var categories = [String]()
     
     @discardableResult func createEntry(amountSpent:Double, category:String, date:Date, note:String?) -> Entry {
         let context = CoreDataStack.shared.container.newBackgroundContext()
@@ -51,6 +52,44 @@ class EntryController {
         
         
     }
+    
+    private var categoryListURL: URL? {
+          let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+          
+          let fileName = "categoryList.plist"
+          
+          return documentDirectory?.appendingPathComponent(fileName)
+      }
+      
+      private func saveToPersistentStore() {
+          
+          let plistEncoder = PropertyListEncoder()
+          
+          do {
+              let categoryData = try plistEncoder.encode(categories)
+              
+              guard let fileURL = categoryListURL else { return }
+              
+              try categoryData.write(to: fileURL)
+          } catch {
+              NSLog("Error encoding memories to property list: \(error)")
+          }
+      }
+      
+      private func loadFromPersistentStore() {
+          
+          do {
+              guard let fileURL = categoryListURL else { return }
+              
+              let categoryData = try Data(contentsOf: fileURL)
+              
+              let plistDecoder = PropertyListDecoder()
+              
+              self.categories = try plistDecoder.decode([String].self, from: categoryData)
+          } catch {
+              NSLog("Error decoding memories from property list: \(error)")
+          }
+      }
     
 
 }
