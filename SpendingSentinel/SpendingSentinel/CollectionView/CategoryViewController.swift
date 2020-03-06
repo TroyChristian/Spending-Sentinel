@@ -10,7 +10,7 @@ import UIKit
 
 class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    private var categories = ["Gas","Food", "Medicine"] {
+    private var categories = ["Gas","Food"] {
         didSet{
             collectionView.reloadData()
         }
