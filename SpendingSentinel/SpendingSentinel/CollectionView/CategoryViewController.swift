@@ -9,11 +9,21 @@
 import UIKit
 
 class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    private var categories = ["Gas","Food", "Medicine"]
+    
+    private var categories = ["Gas","Food", "Medicine"] {
+        didSet{
+            collectionView.reloadData()
+        }
+    }
+    
     var chosenCategories = [String]()
     var knownAmountofFirstPurchase:Double?
-    var readyToProceed = false
-   
+    
+    @IBOutlet weak var newCategoryTextField: UITextField!
+    
+  
+    @IBOutlet weak var collectionView: CategoryCollectionView!
+    
     @IBOutlet weak var purchaseTextField: UITextField!
     
     @IBAction func enterPurchaseButton(_ sender: Any) {
@@ -34,9 +44,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         super.viewDidLoad()
         
         
-        func readyToProceedFunction() {
-            readyToProceed = true
-        }
+     
     
 
     }
@@ -50,9 +58,40 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
   
     }
     
-    func addCategory() {
+    func addCategory(){
+        guard let newCategory = newCategoryTextField.text else {return}
+        categories.append(newCategory)
         
     }
+    
+//    func addCategory() {
+//                let alert = UIAlertController(title: "Enter New Category", message: "What is your Categorys Name?", preferredStyle: .alert)
+//         alert.addAction(UIAlertAction(title:"Cancel", style: .cancel, handler: nil))
+//                alert.addTextField { (textField) in
+//                    textField.placeholder = "Add new category"
+//
+//                    let newCategory = (alert.textFields?.first?.text) ?? "BlankEntry"
+//                                    self.categories.append(newCategory)
+//                                    print("Added new category: \(newCategory)")
+//
+//                }
+//
+//
+//
+//
+//
+//
+//
+//                self.present(alert, animated: true, completion:nil)
+//
+//
+//
+//
+//            }
+//
+        
+        
+  
     
 
 //    func multipleCategories ()   {

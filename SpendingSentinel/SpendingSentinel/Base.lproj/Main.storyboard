@@ -79,6 +79,12 @@
                                     <action selector="enterPurchaseButton:" destination="5Cr-wM-8Kz" eventType="touchUpInside" id="9me-OK-8Kc"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wzu-lH-vnT">
+                                <rect key="frame" x="295" y="73" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -100,6 +106,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Enter Purchase" image="dollarsign.circle" catalog="system" id="ztz-kM-tUu"/>
                     <connections>
+                        <outlet property="collectionView" destination="CxS-dE-LNE" id="Ddg-e9-Qw1"/>
+                        <outlet property="newCategoryTextField" destination="Wzu-lH-vnT" id="cHG-sQ-V4l"/>
                         <outlet property="purchaseTextField" destination="rHa-5w-lJ0" id="3Ke-eG-X62"/>
                     </connections>
                 </viewController>
