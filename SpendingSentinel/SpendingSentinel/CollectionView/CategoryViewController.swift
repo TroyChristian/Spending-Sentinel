@@ -11,6 +11,8 @@ import UIKit
 class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     private var categories = ["Gas","Food", "Medicine"]
     var chosenCategories = [String]()
+    var knownAmountofFirstPurchase:Double?
+    var readyToProceed = false
    
     @IBOutlet weak var purchaseTextField: UITextField!
     
@@ -32,21 +34,20 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         super.viewDidLoad()
         
         
-      
+        func readyToProceedFunction() {
+            readyToProceed = true
+        }
     
 
     }
     func enterPurchase() {
         guard let purchase = (purchaseTextField.text) else { return }
         guard let doublePurchase = Double(purchase) else {return}
-        if  chosenCategories.count == 1 {
+       
             entryController.createEntry(amountSpent: doublePurchase, category: chosenCategories[0], date: Date(), note: nil)
             print("new entry created")
-        }
-        else { return }
-
-
-
+        
+  
     }
     
     func addCategory() {
@@ -54,23 +55,56 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
 
-//    func multipleCategories() {
-//        let alert = UIAlertController(title: "Multiple Categories Selected", message: "How much did you spend on your chos", preferredStyle: <#T##UIAlertController.Style#>)
+//    func multipleCategories ()   {
+//        let alert = UIAlertController(title: "Multiple Categories Selected: How much did you spend on \(chosenCategories[0])", message: "How much did you spend on your first selected category", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title:"Cancel", style: .cancel, handler: nil))
+//
+//        alert.addTextField { (textField) in
+//            textField.placeholder = "\(self.chosenCategories[0])"
+//
+//        }
+//
+//        alert.addAction(UIAlertAction(title: "Enter Amount", style: .default, handler: { (action) in
+//
+//            if let amount = (alert.textFields?.first?.text) {
+//                guard let doubleAmount = Double(amount) else {return}
+//                self.knownAmountofFirstPurchase = doubleAmount
+//            } else { print("Returning on line 75"); return}
+//        }))
+//        self.present(alert, animated: true, completion:nil)
+//        print("Inside MultipleCategories knownAmounofFirstPurchase: \(knownAmountofFirstPurchase)")
+//
 //    }
-    
-    
-    
-    func divideTotalOfTwoCategories(total:Double, knownAmountOfOneCategory:Double) -> Double {
-        var amountOfSecondCategory = total - knownAmountOfOneCategory
-        return amountOfSecondCategory
-       
-        
-        
-        
-        
-        
-    }
-    
+//
+//
+//    func multipleCategoriesPartTwo(){
+//        print("Inside MultipleCategoriesPartTwo knownAmounofFirstPurchase: \(knownAmountofFirstPurchase)")
+//        entryController.createEntry(amountSpent: knownAmountofFirstPurchase ?? 2.22, category: chosenCategories[0], date: Date(), note: nil)
+//
+//        guard let purchase = (purchaseTextField.text) else { return }
+//        guard let doublePurchase = Double(purchase) else {return}
+//
+//        let totalForSecondCategory =   divideTotalOfTwoCategories(total: doublePurchase, knownAmountOfOneCategory: knownAmountofFirstPurchase ?? 2.22)
+//
+//        entryController.createEntry(amountSpent: totalForSecondCategory, category: chosenCategories[1], date: Date(), note: nil)
+//    }
+//
+//
+//
+//
+//
+//
+//    func divideTotalOfTwoCategories(total:Double, knownAmountOfOneCategory:Double) -> Double {
+//        let amountOfSecondCategory = total - knownAmountOfOneCategory
+//        return amountOfSecondCategory
+//
+//
+//
+//
+//
+//
+//    }
+//
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -93,7 +127,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         //add to  a list of selected cells here to create more than 1 cat if cell is > 1
         
         collectionView.allowsMultipleSelection = true
-        if chosenCategories.count < 2 {
+        if chosenCategories.count < 1 {
             let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell
             cell?.layer.borderWidth = 2.0
             cell?.layer.borderColor = UIColor.gray.cgColor
