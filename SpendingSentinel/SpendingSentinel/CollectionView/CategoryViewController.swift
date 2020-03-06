@@ -10,6 +10,7 @@ import UIKit
 
 class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     private var categories = ["Gas","Food"]
+    var chosenCategories = [String]()
    
     @IBOutlet weak var purchaseTextField: UITextField!
     
@@ -26,12 +27,16 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     
 
     }
-    func enterPurchase() {
-        guard let purchase = (purchaseTextField.text) else { return }
-        //guard let purchase = Double(purchase)
-        
-        
-    }
+//    func enterPurchase() {
+//        guard let purchase = (purchaseTextField.text) else { return }
+//        guard let doublePurchase = Double(purchase) else {return}
+//        entryController.createEntry(amountSpent: doublePurchase, category: <#T##String#>, date: <#T##Date#>, note: <#T##String?#>)
+//
+//
+//
+//    }
+    
+
     
     
     
@@ -60,17 +65,21 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         //add to  a list of selected cells here to create more than 1 cat if cell is > 1
         
         collectionView.allowsMultipleSelection = true
-        let cell = collectionView.cellForItem(at: indexPath)
+        let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell
         cell?.layer.borderWidth = 2.0
         cell?.layer.borderColor = UIColor.gray.cgColor
         cell?.isSelected = true
+        chosenCategories.append((cell?.categoryLabel.text)!)
+        print("I'm chosenCategories: \(chosenCategories)")
        
         
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
+        let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell
         cell?.layer.borderColor = UIColor.white.cgColor
         cell?.isSelected = false
+        chosenCategories = chosenCategories.filter{$0 != ((cell?.categoryLabel.text)!)}
+        print("I'm chosenCategories: \(chosenCategories)")
          
 
 
