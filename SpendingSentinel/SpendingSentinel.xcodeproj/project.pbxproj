@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB528FDD2411E88100A8AC0C /* CurrentMonthTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB528FDC2411E88100A8AC0C /* CurrentMonthTableViewController.swift */; };
+		FB528FE32412570200A8AC0C /* categoriesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB528FE22412570200A8AC0C /* categoriesList.plist */; };
 		FBBF04BB240EBA07000D7D03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04BA240EBA07000D7D03 /* AppDelegate.swift */; };
 		FBBF04BD240EBA07000D7D03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBF04BC240EBA07000D7D03 /* SceneDelegate.swift */; };
 		FBBF04C2240EBA07000D7D03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBBF04C0240EBA07000D7D03 /* Main.storyboard */; };
@@ -25,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		FB528FDC2411E88100A8AC0C /* CurrentMonthTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMonthTableViewController.swift; sourceTree = "<group>"; };
+		FB528FE22412570200A8AC0C /* categoriesList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = categoriesList.plist; path = ../../../categoriesList.plist; sourceTree = "<group>"; };
+		FB528FE42412581C00A8AC0C /* categoriesList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = categoriesList.plist; sourceTree = "<group>"; };
 		FBBF04B7240EBA07000D7D03 /* SpendingSentinel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpendingSentinel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBF04BA240EBA07000D7D03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBBF04BC240EBA07000D7D03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +85,9 @@
 				FBBF04C0240EBA07000D7D03 /* Main.storyboard */,
 				FBBF04C3240EBA09000D7D03 /* Assets.xcassets */,
 				FBBF04C5240EBA09000D7D03 /* LaunchScreen.storyboard */,
+				FB528FE42412581C00A8AC0C /* categoriesList.plist */,
 				FBBF04C8240EBA09000D7D03 /* Info.plist */,
+				FB528FE22412570200A8AC0C /* categoriesList.plist */,
 				FBBF04D9240EEAC1000D7D03 /* CategoryController */,
 				FBBF04D3240ED365000D7D03 /* CoreData */,
 				FBBF04D0240EC789000D7D03 /* CollectionView */,
@@ -185,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB528FE32412570200A8AC0C /* categoriesList.plist in Resources */,
 				FBBF04C7240EBA09000D7D03 /* LaunchScreen.storyboard in Resources */,
 				FBBF04C4240EBA09000D7D03 /* Assets.xcassets in Resources */,
 				FBBF04C2240EBA07000D7D03 /* Main.storyboard in Resources */,

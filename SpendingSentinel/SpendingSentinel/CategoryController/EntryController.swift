@@ -10,6 +10,9 @@ import Foundation
 import CoreData
 
 class EntryController {
+    init() {
+        loadFromPersistentStore()
+    }
     
     static var shared = EntryController()
     var entries = [Entry]()
@@ -56,7 +59,7 @@ class EntryController {
     private var categoryListURL: URL? {
           let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
           
-          let fileName = "categoryList.plist"
+          let fileName = "categoriesList.plist"
           
           return documentDirectory?.appendingPathComponent(fileName)
       }
