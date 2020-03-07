@@ -40,10 +40,11 @@ class EntryController {
     func delete(entry: Entry) {
         
         CoreDataStack.shared.mainContext.delete(entry)
-        let context = CoreDataStack.shared.container.newBackgroundContext()
+        print("Core data entry deleted")
+        let context = CoreDataStack.shared.mainContext
         do {
             try CoreDataStack.shared.save(context:context)
-            print("CoreData entry saved!")
+            print("CoreData entry delete saved!")
         } catch {
             print("CoreDataObject was not saved, EntryController line 19: createEntry, error: \(error)")
         }
