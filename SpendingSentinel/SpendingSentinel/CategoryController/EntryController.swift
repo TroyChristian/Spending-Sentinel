@@ -56,8 +56,7 @@ class EntryController {
         let moc = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest:fetchRequest, managedObjectContext:moc, sectionNameKeyPath: "priority", cacheName:nil)  
         try! frc.performFetch()
-        // is there a way to grab and manipulate the results of this fetch to populate a tableView ^^
-        
+       
         
         
         

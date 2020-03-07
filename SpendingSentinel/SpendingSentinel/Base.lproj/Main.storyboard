@@ -31,29 +31,34 @@
                                 <rect key="frame" x="87" y="233" width="240" height="79"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T9m-N4-wLk">
-                                    <size key="itemSize" width="92" height="70"/>
+                                    <size key="itemSize" width="237" height="81"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="eIM-Uc-r04" customClass="CategoryCollectionViewCell" customModule="SpendingSentinel" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="92" height="70"/>
+                                        <rect key="frame" x="1.5" y="0.0" width="237" height="81"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vUg-yE-KfD">
-                                            <rect key="frame" x="0.0" y="0.0" width="92" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="237" height="81"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ma-3H-BGB">
-                                                    <rect key="frame" x="8" y="25" width="71" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ma-3H-BGB">
+                                                    <rect key="frame" x="8" y="25" width="84" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="4Ma-3H-BGB" secondAttribute="trailing" id="Ho0-Fd-4wS"/>
+                                                <constraint firstItem="4Ma-3H-BGB" firstAttribute="centerY" secondItem="vUg-yE-KfD" secondAttribute="centerY" id="a1V-K7-ZfC"/>
+                                                <constraint firstItem="4Ma-3H-BGB" firstAttribute="top" secondItem="vUg-yE-KfD" secondAttribute="top" constant="25" id="i2D-u4-Wf8"/>
+                                                <constraint firstItem="4Ma-3H-BGB" firstAttribute="leading" secondItem="vUg-yE-KfD" secondAttribute="leadingMargin" id="mpx-05-PnY"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="92" height="70"/>
+                                        <size key="customSize" width="237" height="81"/>
                                         <connections>
                                             <outlet property="categoryLabel" destination="4Ma-3H-BGB" id="Chi-Ir-SYc"/>
                                         </connections>
@@ -71,17 +76,28 @@
                                     <action selector="addCategory:" destination="5Cr-wM-8Kz" eventType="touchUpInside" id="rR5-dM-UwL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHB-If-VKc">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHB-If-VKc">
                                 <rect key="frame" x="155" y="706" width="105" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Enter Purchase"/>
                                 <connections>
                                     <action selector="enterPurchaseButton:" destination="5Cr-wM-8Kz" eventType="touchUpInside" id="9me-OK-8Kc"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wzu-lH-vnT">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wzu-lH-vnT">
                                 <rect key="frame" x="295" y="73" width="97" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqJ-2T-GZK">
+                                <rect key="frame" x="0.0" y="51" width="122" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Remove Category"/>
+                                <connections>
+                                    <action selector="removeCategoryButton:" destination="5Cr-wM-8Kz" eventType="touchUpInside" id="Lff-im-HIe"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C0g-6r-X6x">
+                                <rect key="frame" x="0.0" y="73" width="108" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -89,6 +105,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="rHa-5w-lJ0" firstAttribute="top" secondItem="1bE-F4-H2i" secondAttribute="bottom" constant="23" id="4yJ-a8-RgZ"/>
+                            <constraint firstItem="KHB-If-VKc" firstAttribute="leading" secondItem="IC2-2q-Z8j" secondAttribute="leading" constant="155" id="9Ha-1X-aaT"/>
+                            <constraint firstItem="C0g-6r-X6x" firstAttribute="leading" secondItem="IC2-2q-Z8j" secondAttribute="leading" id="ALg-MB-T9Y"/>
                             <constraint firstItem="IC2-2q-Z8j" firstAttribute="bottom" secondItem="CxS-dE-LNE" secondAttribute="bottom" constant="501" id="Ca5-Xo-JQA"/>
                             <constraint firstItem="CxS-dE-LNE" firstAttribute="top" secondItem="rHa-5w-lJ0" secondAttribute="bottom" constant="37" id="DMB-e3-uhw"/>
                             <constraint firstItem="IC2-2q-Z8j" firstAttribute="trailing" secondItem="U7v-vi-F2o" secondAttribute="trailing" constant="22" id="GJ0-j4-P5E"/>
@@ -98,9 +116,13 @@
                             <constraint firstItem="rHa-5w-lJ0" firstAttribute="leading" secondItem="1bE-F4-H2i" secondAttribute="leading" id="UTZ-Fk-0Ok"/>
                             <constraint firstItem="rHa-5w-lJ0" firstAttribute="trailing" secondItem="1bE-F4-H2i" secondAttribute="trailing" id="XJg-Ko-iZR"/>
                             <constraint firstItem="U7v-vi-F2o" firstAttribute="top" secondItem="IC2-2q-Z8j" secondAttribute="top" constant="7" id="XY4-SH-s9L"/>
+                            <constraint firstItem="C0g-6r-X6x" firstAttribute="top" secondItem="IC2-2q-Z8j" secondAttribute="top" constant="29" id="Xkb-TS-mfi"/>
                             <constraint firstItem="1bE-F4-H2i" firstAttribute="top" secondItem="IC2-2q-Z8j" secondAttribute="top" constant="74" id="aUg-64-9Nj"/>
+                            <constraint firstItem="KHB-If-VKc" firstAttribute="centerX" secondItem="CxS-dE-LNE" secondAttribute="centerX" id="hYi-82-ube"/>
                             <constraint firstItem="IC2-2q-Z8j" firstAttribute="trailing" secondItem="CxS-dE-LNE" secondAttribute="trailing" constant="87" id="isu-ds-S3o"/>
+                            <constraint firstItem="IC2-2q-Z8j" firstAttribute="bottom" secondItem="KHB-If-VKc" secondAttribute="bottom" constant="77" id="jid-3c-DtO"/>
                             <constraint firstItem="1bE-F4-H2i" firstAttribute="leading" secondItem="IC2-2q-Z8j" secondAttribute="leading" constant="149" id="nUY-7E-wPK"/>
+                            <constraint firstItem="Wzu-lH-vnT" firstAttribute="leading" secondItem="C0g-6r-X6x" secondAttribute="trailing" constant="187" id="zlc-e9-di6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IC2-2q-Z8j"/>
                     </view>
@@ -109,6 +131,7 @@
                         <outlet property="collectionView" destination="CxS-dE-LNE" id="Ddg-e9-Qw1"/>
                         <outlet property="newCategoryTextField" destination="Wzu-lH-vnT" id="cHG-sQ-V4l"/>
                         <outlet property="purchaseTextField" destination="rHa-5w-lJ0" id="3Ke-eG-X62"/>
+                        <outlet property="removeCategoryTextField" destination="C0g-6r-X6x" id="jIH-6H-bFu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YE0-5E-bZU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

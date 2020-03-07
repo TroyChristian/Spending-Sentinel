@@ -15,6 +15,13 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     var chosenCategories = [String]()
     var knownAmountofFirstPurchase:Double?
     
+    @IBAction func removeCategoryButton(_ sender: Any) {
+        removeCategory()
+        collectionView.reloadData() 
+    }
+    
+    @IBOutlet weak var removeCategoryTextField: UITextField!
+    
     @IBOutlet weak var newCategoryTextField: UITextField!
     
   
@@ -61,6 +68,14 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
        EntryController.shared.saveToPersistentStore()
         collectionView.reloadData()
         
+    }
+    
+    func removeCategory(){
+        guard let categoryToRemove = removeCategoryTextField.text else {return}
+        //chosenCategories = chosenCategories.filter{$0 != ((cell?.categoryLabel.text)!)}
+        EntryController.shared.categories = EntryController.shared.categories.filter{$0 != categoryToRemove}
+        print("Removed entry of \(categoryToRemove)")
+        EntryController.shared.saveToPersistentStore()
     }
     
 //    func addCategory() {
